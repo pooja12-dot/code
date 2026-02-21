@@ -1,0 +1,35 @@
+<html>
+<head>
+  <title>This Page Fetches Quote</title>
+</head>
+
+<body>
+  <p>
+    <p id="quote"></p>
+    <p id="author"></p>
+    <input type="button" value="Get Quote" id="btn">
+  </p>
+</body>
+
+<script>
+var btn = document.getElementById("btn");
+btn.addEventListener("click", get_quote);
+
+async function get_quote()
+{
+  var response = await fetch("https://api.quotable.io/random");
+  var data = await response.json();
+  render_data(data);
+}
+
+function render_data(data)
+{
+  const quote = document.getElementById("quote");
+  const author = document.getElementById("author");
+
+  quote.innerHTML = data.content;
+  author.innerHTML = "Author: " + data.author;
+}
+</script>
+
+</html>
