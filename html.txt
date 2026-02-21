@@ -6,9 +6,7 @@
 <body>
   <p>
     <p id="quote"></p>
-    <p id="author"></p>
-    <input type="button" value="Get Quote" id="btn">
-  </p>
+   
 </body>
 
 <script>
@@ -33,3 +31,4 @@ function render_data(data)
 </script>
 
 </html>
+
